@@ -1,0 +1,229 @@
+# =============================================================================
+# CMPDI AI Platform — .gitignore
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# SECRETS & CREDENTIALS  ← never commit these
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example          # allow the template/example file if you create one
+
+
+# -----------------------------------------------------------------------------
+# PYTHON — virtual environments
+# -----------------------------------------------------------------------------
+venv/
+.venv/
+.venv.zip
+env/
+ENV/
+.Python
+backend/venv/
+backend/.venv/
+
+
+# -----------------------------------------------------------------------------
+# PYTHON — bytecode & cache
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+
+# -----------------------------------------------------------------------------
+# PYTHON — packaging & distribution
+# -----------------------------------------------------------------------------
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+pip-wheel-metadata/
+MANIFEST
+
+
+# -----------------------------------------------------------------------------
+# PYTHON — testing & coverage
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.coveragerc
+nosetests.xml
+
+
+# -----------------------------------------------------------------------------
+# PYTHON — type checking & linting
+# -----------------------------------------------------------------------------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pytype/
+
+
+# -----------------------------------------------------------------------------
+# PYTHON — misc
+# -----------------------------------------------------------------------------
+*.log
+*.pot
+*.mo
+instance/
+.webassets-cache
+celerybeat-schedule
+celerybeat.pid
+*.sage.py
+
+
+# -----------------------------------------------------------------------------
+# FASTAPI / UVICORN
+# -----------------------------------------------------------------------------
+*.pid
+
+
+# -----------------------------------------------------------------------------
+# DATABASE — local files
+# -----------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+
+# -----------------------------------------------------------------------------
+# DATA — uploaded documents, processed text, generated reports
+# These are runtime artefacts and can be large. Keep the folder structure
+# but ignore the contents (placeholder .gitkeep files are fine to commit).
+# -----------------------------------------------------------------------------
+data/documents/*
+data/processed/*
+data/reports/*
+!data/documents/.gitkeep
+!data/processed/.gitkeep
+!data/reports/.gitkeep
+
+
+# -----------------------------------------------------------------------------
+# NODE / FRONTEND
+# -----------------------------------------------------------------------------
+node_modules/
+frontend/node_modules/
+
+
+# -----------------------------------------------------------------------------
+# VITE / BUILD OUTPUT
+# -----------------------------------------------------------------------------
+frontend/dist/
+frontend/.vite/
+dist/
+.vite/
+
+
+# -----------------------------------------------------------------------------
+# FRONTEND — misc
+# -----------------------------------------------------------------------------
+*.local
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+
+# -----------------------------------------------------------------------------
+# EDITORS & IDEs
+# -----------------------------------------------------------------------------
+
+# VS Code
+.vscode/
+!.vscode/extensions.json   # allow recommended extensions list
+
+# JetBrains (PyCharm, WebStorm, IntelliJ)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*#
+.\#*
+
+
+# -----------------------------------------------------------------------------
+# OPERATING SYSTEM
+# -----------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.fuse_hidden*
+.nfs*
+
+
+# -----------------------------------------------------------------------------
+# TESSERACT / OCR
+# -----------------------------------------------------------------------------
+# Tesseract is installed system-wide; no project files to ignore.
+# The hardcoded path in ocr_service.py targets C:\Program Files\Tesseract-OCR\
+
+
+# -----------------------------------------------------------------------------
+# TEMPORARY & SCRATCH FILES
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+*.rej
+
+
+# -----------------------------------------------------------------------------
+# JUPYTER NOTEBOOKS (if any analysis notebooks are added later)
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+# -----------------------------------------------------------------------------
+# DOCKER (if containerisation is added later)
+# -----------------------------------------------------------------------------
+.dockerignore
+docker-compose.override.yml
